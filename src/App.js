@@ -4,15 +4,14 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Footer from './components/Footer/Footer';
+import Promesa from './components/Promises/Promises';
 
 
 function App() {
 
+/*   const [pedido, setPedido] = useState([])
 
-  const [pedido, setPedido] = useState([])
-
-  //const catalogo = [{nombre:'Shampoo', stock:'5',price:37000},{nombre:'Tintura', stock:'2',price:18000},{nombre:'Tintura', stock:'8',price:15500}]
-  const catalogo = {nombre:'Shampoo', stock:'5',price:37000}
+const catalogo = [{nombre:'Shampoo', stock:'5',price:37000},{nombre:'Tintura', stock:'2',price:18000},{nombre:'Tintura', stock:'8',price:15500}]
 
 useEffect(() => {
   const producto = new Promise((resolve,reject) => {
@@ -21,22 +20,33 @@ useEffect(() => {
     }, 2000);
   })
 
-  producto.then((res) => setPedido(res)).then(()=>console.log(pedido))
-  .catch((err)=>console.log(err))
+  producto
+    .then(
+      (resp) => {
+        setPedido(resp);
+      },
+      (err) => {
+        console.log("error", err);
+      }
+    )
+    .then(() => console.log(producto))
+    .catch((err) => console.log(err));
 
-  console.log(pedido);
+    console.log(producto);
 
   return () => {
     
   }
 }, [])
-
+ */
 
   return (
     <div className="App">
         <NavBar />
         <ItemListContainer />
-      <header className="App-header">
+
+        <Promesa/>
+{/*       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -49,7 +59,7 @@ useEffect(() => {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
       <Footer />
     </div>
   );

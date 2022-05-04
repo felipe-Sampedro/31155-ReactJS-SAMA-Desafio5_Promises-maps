@@ -4,19 +4,18 @@ import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = ({greetings}) => {
 
-/*   const [pedido,setPedido] = useState([])
-
-  const catalogo = [{name:'Shampoo', stock:'5',price:37000},{name:'Tintura', stock:'2',price:18000},{name:'Tintura', stock:'8',price:15500}]
+  const [pedido,setPedido] = useState([])
+  const catalogo = [{nombre:'Shampoo'},{nombre:'Acondicionador'},{nombre:'Tintura'}]
 
 useEffect(() => {
   const producto = new Promise((resolve,reject) => {
     setTimeout(() => {
       resolve(catalogo)
     }, 2000);
-  })
+  });
 
-  producto.then((res) => setPedido(res))
-//  .then((res)=>console.log(pedido))
+  producto.then((res) => {setPedido(res)})
+  .then(()=>console.log(producto))
   .catch((err)=>console.log(err))
 
   console.log(pedido);
@@ -24,17 +23,17 @@ useEffect(() => {
   return () => {
     
   }
-}, []) */
+}, [])
 
 
 
   return (
-    <div className='bg-info'>Este es el componente ItemListContainer
+    <div className='bg-info'>ItemListContainer
 
         <p>{greetings}</p>
         <div className="d-flex justify-content-evenly p-4">
 
-          <ItemList/>
+          <ItemList pedido={pedido}/>
           <Item stock={5}/>
           <Item stock={2}/>
           <Item stock={8}/>
