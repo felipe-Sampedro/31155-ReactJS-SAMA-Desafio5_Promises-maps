@@ -12,7 +12,6 @@ const ItemCount = ({stock}) => {
         counter > 1 && setCounter(counter-1)
     }
 
-
   return (
     
     <div>
@@ -22,12 +21,8 @@ const ItemCount = ({stock}) => {
             <p>{counter}</p>
             <button onClick={sumar}>+</button>
         </div>
-
-
     </div>
   )
- 
 }
-
 export default ItemCount
 
